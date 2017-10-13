@@ -54,7 +54,8 @@ for (i in Metrics)
   print(PlotResult)
   ggsave(
     plot = PlotResult,
-    filename = file.path("../images", paste(i, "jpg", sep = ".")),
+    device = cairo_pdf,
+    filename = file.path("../images", paste(i, "pdf", sep = ".")),
     width = 10,
     height = 9
   )
@@ -157,7 +158,8 @@ print(RankingResult)
 
 ggsave(
   plot = RankingResult,
-  filename = file.path("../images", "RankingResult.eps"),
+  device = cairo_pdf,
+  filename = file.path("../images", "RankingResult.pdf"),
   width = 10,
   height = 10
 )
